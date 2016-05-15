@@ -1,0 +1,19 @@
+example ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222 ansible_ssh_user='vagrant' ansible_ssh_private_key_file='../.vagrant/machines/default/virtualbox/private_key'
+
+[example-nginx]
+example
+
+[example-php]
+example
+
+[example-postgresql]
+example
+
+[example-redis]
+example
+
+[all_groups:children]
+example-nginx
+example-php
+example-postgresql
+example-redis
