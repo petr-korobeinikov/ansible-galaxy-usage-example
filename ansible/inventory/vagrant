@@ -1,19 +1,19 @@
-example ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222 ansible_ssh_user='vagrant' ansible_ssh_private_key_file='../.vagrant/machines/default/virtualbox/private_key'
+nginx1            ansible_ssh_host=127.0.0.1 ansible_ssh_port=2211 ansible_ssh_user='vagrant' ansible_ssh_private_key_file='../.vagrant/machines/nginx1/virtualbox/private_key'
+php1              ansible_ssh_host=127.0.0.1 ansible_ssh_port=2221 ansible_ssh_user='vagrant' ansible_ssh_private_key_file='../.vagrant/machines/php1/virtualbox/private_key'
+php2              ansible_ssh_host=127.0.0.1 ansible_ssh_port=2222 ansible_ssh_user='vagrant' ansible_ssh_private_key_file='../.vagrant/machines/php2/virtualbox/private_key'
+php3              ansible_ssh_host=127.0.0.1 ansible_ssh_port=2223 ansible_ssh_user='vagrant' ansible_ssh_private_key_file='../.vagrant/machines/php3/virtualbox/private_key'
+postgresql-master ansible_ssh_host=127.0.0.1 ansible_ssh_port=2231 ansible_ssh_user='vagrant' ansible_ssh_private_key_file='../.vagrant/machines/postgresql-master/virtualbox/private_key'
 
-[example-nginx]
-example
+[nginx]
+nginx1
 
-[example-php]
-example
+[php]
+php[1:3]
 
-[example-postgresql]
-example
-
-[example-redis]
-example
+[postgresql]
+postgresql-master
 
 [all_groups:children]
-example-nginx
-example-php
-example-postgresql
-example-redis
+nginx
+php
+postgresql

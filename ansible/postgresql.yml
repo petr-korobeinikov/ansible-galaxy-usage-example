@@ -1,0 +1,14 @@
+---
+- hosts: postgresql
+  become: true
+  roles:
+    - role: pkorobeinikov.apt-repository
+      apt_repository_repositories:
+        - repo: deb http://apt.postgresql.org/pub/repos/apt/ trusty-pgdg main
+          key: https://www.postgresql.org/media/keys/ACCC4CF8.asc
+
+    - role: pkorobeinikov.postgresql
+      postgresql_version: 9.5
+      postgresql_package_version: 9.5.3-1.pgdg14.04+1
+      postgresql_hba_template: postgresql/pg_hba.conf.j2
+      postgresql_conf_template: postgresql/postgresql.conf.j2

@@ -3,3 +3,5 @@
 - src: pkorobeinikov.tzdata
 - src: pkorobeinikov.apt-repository
 - src: pkorobeinikov.nginx
+- src: pkorobeinikov.php
+- src: pkorobeinikov.postgresql

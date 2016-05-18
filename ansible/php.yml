@@ -1,0 +1,15 @@
+---
+- hosts: php
+  become: true
+  roles:
+    - role: pkorobeinikov.apt-repository
+      apt_repository_repositories:
+        - repo: ppa:ondrej/php
+
+    - role: pkorobeinikov.php
+      php_version: 7.0
+      php_package_version: 7.0.6-11+donate.sury.org~trusty+2
+      php_modules:
+        - fpm
+        - cli
+        - xml

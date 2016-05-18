@@ -1,5 +1,5 @@
 ---
-- hosts: example-nginx
+- hosts: nginx
   become: true
   roles:
     - role: pkorobeinikov.apt-repository

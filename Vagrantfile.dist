@@ -2,7 +2,34 @@ Vagrant.require_version '>= 1.8.1'
 
 Vagrant.configure(2) do |config|
   config.vm.box = 'ubuntu/trusty64'
-  config.vm.hostname = 'example'
-  config.vm.network :private_network, ip: '10.0.0.22'
-  config.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh'
+
+  config.vm.define 'nginx1' do |box|
+    box.vm.hostname = 'nginx1'
+    box.vm.network :private_network, ip: '10.0.0.11'
+    box.vm.network :forwarded_port, guest: 22, host: 2211, id: 'ssh'
+  end
+
+  config.vm.define 'php1' do |box|
+    box.vm.hostname = 'php1'
+    box.vm.network :private_network, ip: '10.0.0.21'
+    box.vm.network :forwarded_port, guest: 22, host: 2221, id: 'ssh'
+  end
+
+  config.vm.define 'php2' do |box|
+    box.vm.hostname = 'php2'
+    box.vm.network :private_network, ip: '10.0.0.22'
+    box.vm.network :forwarded_port, guest: 22, host: 2222, id: 'ssh'
+  end
+
+  config.vm.define 'php3' do |box|
+    box.vm.hostname = 'php3'
+    box.vm.network :private_network, ip: '10.0.0.23'
+    box.vm.network :forwarded_port, guest: 22, host: 2223, id: 'ssh'
+  end
+
+  config.vm.define 'postgresql-master' do |box|
+    box.vm.hostname = 'postgresql-master'
+    box.vm.network :private_network, ip: '10.0.0.31'
+    box.vm.network :forwarded_port, guest: 22, host: 2231, id: 'ssh'
+  end
 end
