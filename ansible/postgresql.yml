@@ -12,3 +12,8 @@
       postgresql_package_version: 9.5.3-1.pgdg14.04+1
       postgresql_hba_template: postgresql/pg_hba.conf.j2
       postgresql_conf_template: postgresql/postgresql.conf.j2
+
+    - role: pkorobeinikov.pgbouncer
+      pgbouncer_package_version: 1.7.2-1.pgdg14.04+1
+      pgbouncer_pgbouncer_ini_template: pgbouncer/pgbouncer.ini.j2
+      pgbouncer_userlist_txt_template: pgbouncer/userlist.txt.j2

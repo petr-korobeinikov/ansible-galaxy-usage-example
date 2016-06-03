@@ -5,3 +5,4 @@
 - src: pkorobeinikov.nginx
 - src: pkorobeinikov.php
 - src: pkorobeinikov.postgresql
+- src: pkorobeinikov.pgbouncer
